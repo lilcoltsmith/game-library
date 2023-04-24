@@ -1,0 +1,137 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '../node_modules/bulma/bulma.sass';
+
+.highcharts-light {
+    .highcharts-background {
+        fill: $light;
+    }
+
+    .highcharts-color-0 { 
+        fill: $link;
+        stroke: $link;
+    }
+
+    .highcharts-color-1 {
+        fill: $success;
+        stroke: $success;
+    }
+
+    .highcharts-color-2 {
+        fill: $danger;
+        stroke: $danger;
+    }
+
+    .highcharts-color-3 {
+        fill: $warning;
+        stroke: $warning;
+    }
+
+    .highcharts-color-4 {
+        fill: $primary;
+        stroke: $primary;
+    }
+
+    .highcharts-title {
+        fill: $dark;
+        font-weight: 300;
+    }
+
+    .highcharts-legend-item text {
+        fill: $dark;
+        font-weight: 300;
+    }
+
+    .highcharts-legend-itemhover text {
+        fill: $dark;
+        font-weight: 400;
+    }
+
+    .highcharts-axis text {
+        fill: $dark;
+    }
+
+    .highcharts-axis-labels text {
+        fill: $dark;
+    }
+
+    .highcharts-xaxis path {
+        stroke: $dark;
+    }
+
+    .highcharts-grid path {
+        stroke: $dark;
+        stroke-dasharray: 1 1;
+    }
+
+    .highcharts-graph {
+        stroke-width: 1.5px;
+    }
+}
+
+.highcharts-dark {
+    .highcharts-background {
+        fill: $dark;
+    }
+
+    .highcharts-color-0 {
+        fill: $link;
+        stroke: $link;
+    }
+
+    .highcharts-color-1 {
+        fill: $success;
+        stroke: $success;
+    }
+
+    .highcharts-color-2 {
+        fill: $danger;
+        stroke: $danger;
+    }
+
+    .highcharts-color-3 {
+        fill: $warning;
+        stroke: $warning;
+    }
+
+    .highcharts-color-4 {
+        fill: $primary;
+        stroke: $primary;
+    }
+
+    .highcharts-title {
+        fill: $light;
+        font-weight: 300;
+    }
+
+    .highcharts-legend-item text {
+        fill: $light;
+        font-weight: 300;
+    }
+
+    .highcharts-legend-itemhover text {
+        fill: $light;
+        font-weight: 400;
+    }
+
+    .highcharts-axis text {
+        fill: $light;
+    }
+
+    .highcharts-axis-labels text {
+        fill: $light;
+    }
+
+    .highcharts-xaxis path {
+        stroke: $light;
+    }
+
+    .highcharts-grid path {
+        stroke: $light;
+        stroke-dasharray: 1 1;
+    }
+
+    .highcharts-graph {
+        stroke-width: 1.5px;
+    }
+}

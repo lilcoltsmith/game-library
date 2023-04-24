@@ -1,0 +1,56 @@
+<section class="section"
+    [ngClass]="{ 'has-background-dark': cookie.themePreference === 'dark', 'has-background-light': cookie.themePreference === 'light' }">
+    <h1 class="title is-1"
+        [ngClass]="{ 'has-text-white': cookie.themePreference === 'dark', 'has-text-black': cookie.themePreference === 'light' }">
+        User Settings</h1>
+</section>
+
+<section class="hero is-fullheight-with-navbar"
+    [ngClass]="{ 'is-dark': cookie.themePreference === 'dark', 'is-light': cookie.themePreference === 'light' }">
+    <div class="hero-head">
+        <div class="box"
+            [ngClass]="{ 'has-background-dark': cookie.themePreference === 'dark', 'has-background-light': cookie.themePreference === 'light' }">
+            <div class="content"
+                [ngClass]="{ 'has-background-dark has-text-white': cookie.themePreference === 'dark', 'has-background-light has-text-black': cookie.themePreference === 'light' }">
+                <div class="columns is-mobile">
+                    <p class="column is-one-quarter-desktop is-two-fifths-tablet is-four-fifths-mobile">
+                        Selected Theme: {{cookie.themePreference}}
+                    </p>
+                    <div class="column is-three-quarters-desktop is-three-fifths-tablet is-one-fifth-mobile">
+                        <button class="button is-link is-small is-rounded" *ngIf="cookie.themePreference">
+                            <fa-icon [icon]="faTrash" size="lg"></fa-icon>
+                        </button>
+                    </div>
+                </div>
+                <p *ngIf="!cookie.themePreference">Current Zip Code Preference: none</p>
+            </div>
+            <div class="content"
+                [ngClass]="{ 'has-background-dark has-text-white': cookie.themePreference === 'dark', 'has-background-light has-text-black': cookie.themePreference === 'light' }">
+                <div class="columns is-mobile">
+                    <p class="column is-one-quarter-desktop column is-two-fifths-tablet is-three-fifths-mobile">
+                        Current Degree Unit Preference
+                    </p>
+                    <div
+                        class="field is-grouped column is-three-quarters-desktop is-three-fifths-tablet is-two-fifths-mobile">
+                        <p class="control">
+                            <button class="button is-link is-rounded is-small" id="c_button"
+                                [ngClass]="{ 'has-background-dark has-text-white': ( cookie.themePreference === 'dark' && !cSelected),
+              'has-background-light has-text-black': ( cookie.themePreference === 'light' && !cSelected), 'is-link': cSelected}">
+                                &#176;C
+                            </button>
+                        </p>
+                        <p class="control">
+                            <button class="button is-rounded is-small" id="f_button"
+                                [ngClass]="{ 'has-background-dark has-text-white': ( cookie.themePreference === 'dark' && !fSelected),
+                'has-background-light has-text-black': ( cookie.themePreference === 'light' && !fSelected), 'is-link': fSelected}">
+                                &#176;F
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-body"></div>
+    <div class="hero-foot"></div>
+</section>

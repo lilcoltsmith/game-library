@@ -1,0 +1,66 @@
+<nav class="navbar is-fixed-top"
+  [ngClass]="{ 'is-dark': cookie.themePreference === 'dark', 'is-light': cookie.themePreference === 'light' }">
+  <div class="navbar-brand">
+    <div class="navbar-item">
+      <span>Game Library</span>
+    </div>
+
+    <a role="button" class="navbar-burger" [ngClass]="{'is-active': burgerIsActive}" aria-label="menu"
+      aria-expanded="false" (click)="toggleBurgerMenu()">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu" [ngClass]="{'is-active': burgerIsActive, 'is-dark': cookie.themePreference === 'dark', 'is-light': cookie.themePreference === 'light'}">
+    <div class="navbar-start">
+      <a class="navbar-item" routerLink="dashboard">Home</a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Modules
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" routerLink="temperature-humidity">
+            Temperature/Humidity
+          </a>
+          <a class="navbar-item" routerLink="barometric-pressure">
+            Barometric Pressure
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button" routerLink="settings" [ngClass]="{ 'is-dark': cookie.themePreference === 'dark', 'is-light': cookie.themePreference === 'light' }">
+            <span class="icon is-medium has-text-link">
+              <fa-icon [icon]="faCog" size="lg"></fa-icon>
+            </span>
+          </a>
+          <a class="button" (click)="toggleTheme()"
+            [ngClass]="{ 'is-dark': cookie.themePreference === 'dark', 'is-light': cookie.themePreference === 'light' }">
+            <span class="icon is-medium has-text-link">
+              <fa-icon [icon]="faSun" size="lg" *ngIf="cookie.themePreference === 'dark'"></fa-icon>
+              <fa-icon [icon]="faMoon" size="lg" *ngIf="cookie.themePreference === 'light'"></fa-icon>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container is-fluid is-paddingless"
+  [ngClass]="{ 'has-background-dark has-text-white': cookie.themePreference === 'dark', 'has-background-light has-text-black': cookie.themePreference === 'light' }">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer has-background-dark has-text-white"
+  [ngClass]="{ 'has-background-dark has-text-white': cookie.themePreference === 'dark', 'has-background-light has-text-black': cookie.themePreference === 'light' }">
+  <div class="content has-text-centered">
+    <p>Created by Colton Smith using <a class="has-text-info" href="https://angular.io">Angular</a> and <a
+        class="has-text-info" href="https://bulma.io">Bulma</a>.
+    </p>
+  </div>
+</footer>
